@@ -150,5 +150,9 @@ func main() {
 		return
 	}
 
+	if pipeline == "" {
+		fmt.Println("Tip: specify fop parameter 'pipe' to ensure processing speed!")
+	}
+
 	pfop(ak, sk, bucket, key, fops, notifyUrl, pipeline, zone, force)
 }
