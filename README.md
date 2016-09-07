@@ -2,7 +2,7 @@
 
 ## 简介
 
-pfop 是七牛持久化数据处理的请求接口，具体文档可以参考 http://developer.qiniu.com/code/v6/api/dora-api/pfop/pfop.html 。
+pfop 是七牛持久化数据处理的请求接口，具体文档可以参考[持久化数据处理文档](http://developer.qiniu.com/code/v6/api/dora-api/pfop/pfop.html)。
 本工具是命令行工具，方便开发者在调试服务的时候使用，具体的代码开源，利用到了[七牛的存储SDK](https://github.com/qiniu/api.v6)。
 
 ## 下载
@@ -48,7 +48,7 @@ See http://api-z1.qiniu.com/status/get/prefop?id=z1.57cfe243f51b822f9501fe47
 ```
 可以通过访问输出的链接地址，查看数据处理的结果，也可以在上面指令发送之前，指定参数`url`来主动接受七牛的处理完成通知。
 
-处理结果如下(具体含义参考文档：http://developer.qiniu.com/code/v6/api/dora-api/pfop/prefop.html)
+处理结果如下，具体含义参考文档[数据处理结果查询](http://developer.qiniu.com/code/v6/api/dora-api/pfop/prefop.html)。
 
 ```
 {
