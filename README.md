@@ -6,9 +6,19 @@ pfop 是七牛持久化数据处理的请求接口，具体文档可以参考[�
 本工具是命令行工具，方便开发者在调试服务的时候使用，具体的代码开源，利用到了[七牛的存储SDK](https://github.com/qiniu/api.v6)。
 
 ## 下载
-可以下载以及编译好的各个平台的可执行文件。
+可以下载已经编译好的各个平台的可执行文件。
 
 [点击下载](http://devtools.qiniu.com/pfop-v1.0.zip)
+
+
+如果需要自己编译，可以设置好 $GOPATH ，然后使用如下命令下载依赖库：
+
+```
+go get github.com/qiniu/api.v6
+go get github.com/qiniu/rpc
+```
+
+然后使用`go build pfop.go`进行编译。
 
 ## 使用
 
