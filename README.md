@@ -8,7 +8,7 @@ pfop 是七牛持久化数据处理的请求接口，具体文档可以参考[�
 ## 下载
 可以下载已经编译好的各个平台的可执行文件。
 
-[点击下载](http://devtools.qiniu.com/pfop-v1.0.zip)
+[点击下载](http://devtools.qiniu.com/pfop-v1.1.zip)
 
 
 如果需要自己编译，可以设置好 $GOPATH ，然后使用如下命令下载依赖库：
@@ -31,7 +31,7 @@ Usage of pfop:
   -fops="": joined fops
   -pipe="": pipeline to use
   -url="": notify url
-  -zone="nb": api zone [nb, bc, na0]
+  -zone="nb": api zone [nb, bc, hn, na0]
   -force: force to redo
 ```
 
@@ -46,6 +46,15 @@ Usage of pfop:
 |url|数据处理完成的结果通知地址|
 |zone|空间所在的机房|
 |force|是否强制执行指令，避免旧指令缓存|
+
+## 多机房
+
+|机房|zone值|
+|----|----|
+|华东|nb|
+|华北|bc|
+|华南|hn|
+|北美|na0|
 
 ## 示例
 

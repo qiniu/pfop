@@ -24,6 +24,11 @@ const (
 )
 
 const (
+	PFOP_HN_URL   = "http://api-z2.qiniu.com/pfop/"
+	PREFOP_HN_URL = "http://api-z2.qiniu.com/status/get/prefop?id=%s"
+)
+
+const (
 	PFOP_NA0_URL   = "http://api-na0.qiniu.com/pfop/"
 	PREFOP_NA0_URL = "http://api-na0.qiniu.com/status/get/prefop?id=%s"
 )
@@ -68,6 +73,9 @@ func pfop(ak, sk, bucket, key, fops string, notifyUrl, pipeline, zone string, fo
 	case "bc":
 		pfopUrl = PFOP_BC_URL
 		prefopUrl = PREFOP_BC_URL
+	case "hn":
+		pfopUrl = PFOP_HN_URL
+		prefopUrl = PREFOP_HN_URL
 	case "na0":
 		pfopUrl = PFOP_NA0_URL
 		prefopUrl = PREFOP_NA0_URL
@@ -102,7 +110,7 @@ func main() {
 	flag.StringVar(&fops, "fops", "", "joined fop")
 	flag.StringVar(&notifyUrl, "url", "", "notify url")
 	flag.StringVar(&pipeline, "pipe", "", "pipeline to use")
-	flag.StringVar(&zone, "zone", "nb", "api zone [nb, bc, or na0]")
+	flag.StringVar(&zone, "zone", "nb", "api zone [nb, bc, hn or na0]")
 	flag.BoolVar(&force, "force", false, "force to redo")
 
 	flag.Usage = func() {
@@ -114,39 +122,39 @@ func main() {
   -fops="": joined fops
   -pipe="": pipeline to use
   -url="": notify url
-  -zone="nb": api zone [nb, bc, na0]
+  -zone="nb": api zone [nb, bc, hn, na0]
   -force: force to redo
 `)
 	}
 	flag.Parse()
 
 	if ak == "" || sk == "" || bucket == "" || key == "" || fops == "" {
-		fmt.Println("invalid pfop parameter 'ak'")
+		fmt.Println("Invalid pfop parameter 'ak'")
 		return
 	}
 
 	if sk == "" {
-		fmt.Println("invalid pfop parameter 'sk'")
+		fmt.Println("Invalid pfop parameter 'sk'")
 		return
 	}
 
 	if bucket == "" {
-		fmt.Println("invalid pfop parameter 'bucket'")
+		fmt.Println("Invalid pfop parameter 'bucket'")
 		return
 	}
 
 	if key == "" {
-		fmt.Println("invalid pfop parameter 'key'")
+		fmt.Println("Invalid pfop parameter 'key'")
 		return
 	}
 
 	if fops == "" {
-		fmt.Println("invalid pfop parameter 'fops'")
+		fmt.Println("Invalid pfop parameter 'fops'")
 		return
 	}
 
-	if !(zone == "nb" || zone == "bc" || zone == "na0" || zone == "aws") {
-		fmt.Println("invalid pfop parameter 'zone'")
+	if !(zone == "nb" || zone == "bc" || zone == "hn" || zone == "na0" || zone == "aws") {
+		fmt.Println("Invalid pfop parameter 'zone'")
 		return
 	}
 
