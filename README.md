@@ -1,5 +1,8 @@
 # pfop
 
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/qiniu/pfop)](https://goreportcard.com/report/github.com/qiniu/pfop)
+
 ## 简介
 
 pfop 是七牛持久化数据处理的请求接口，具体文档可以参考[持久化数据处理文档](http://developer.qiniu.com/code/v6/api/dora-api/pfop/pfop.html)。
