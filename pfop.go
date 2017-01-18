@@ -128,7 +128,7 @@ func main() {
 	}
 	flag.Parse()
 
-	if ak == "" || sk == "" || bucket == "" || key == "" || fops == "" {
+	if ak == "" {
 		fmt.Println("Invalid pfop parameter 'ak'")
 		return
 	}
