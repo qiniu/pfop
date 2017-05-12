@@ -11,7 +11,7 @@ pfop 是七牛持久化数据处理的请求接口，具体文档可以参考[�
 ## 下载
 可以下载已经编译好的各个平台的可执行文件。
 
-[点击下载](http://devtools.qiniu.com/pfop-v1.1.zip)
+[点击下载](http://devtools.qiniu.com/pfop-v1.2.zip)
 
 
 如果需要自己编译，可以设置好 $GOPATH ，然后使用如下命令下载依赖库：
@@ -47,7 +47,7 @@ Usage of pfop:
 |fops|持久化数据处理的指令|
 |pipe|数据处理的私有队列|
 |url|数据处理完成的结果通知地址|
-|zone|空间所在的机房|
+|zone|空间所在的机房，这个参数可以不填|
 |force|是否强制执行指令，避免旧指令缓存|
 
 ## 多机房
@@ -68,6 +68,8 @@ $ ./pfop_darwin_amd64 -ak 'u-vclPNwctgp033dF6RSlKxpi1q-UL2yPfw8FtkM' -sk 'xxxfJE
 
 See http://api-z1.qiniu.com/status/get/prefop?id=z1.57cfe243f51b822f9501fe47
 ```
+上面的命令适用于Linux和Mac环境，如果是Windows的环境，请给参数加上双引号，而不是单引号。
+
 可以通过访问输出的链接地址，查看数据处理的结果，也可以在上面指令发送之前，指定参数`url`来主动接受七牛的处理完成通知。
 
 处理结果如下，具体含义参考文档[数据处理结果查询](http://developer.qiniu.com/code/v6/api/dora-api/pfop/prefop.html)。
